@@ -5,43 +5,24 @@
 
   <groupId>io.github.marcadetd</groupId>
   <artifactId>main</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-
-  <scm>
-    <connection>scm:git:git@github.com:marcadetd/testmvn.git</connection>
-    <developerConnection>scm:git:git@github.com:marcadetd/testmvn.git</developerConnection>
-    <url>https://github.com/marcadetd/testmvn</url>
-    <tag>HEAD</tag>
-  </scm>
-
-  <distributionManagement>
-    <repository>
-      <id>me</id>
-      <url>file:/Users/marcadet/repo</url>
-    </repository>
-    <snapshotRepository>
-      <id>me</id>
-      <url>file:/Users/marcadet/repo</url>
-    </snapshotRepository>
-  </distributionManagement>
 
   <properties>
     <maven-group-id>org.apache.maven.plugins</maven-group-id>
     <maven-clean-plugin-version>3.3.2</maven-clean-plugin-version>
     <maven-resources-plugin-version>3.3.1</maven-resources-plugin-version>
     <maven-compiler-plugin-version>3.11.0</maven-compiler-plugin-version>
-    <maven-toolchain-plugin-version>3.1.0</maven-toolchain-plugin-version>
-    <maven-surefire-plugin-version>3.2.1</maven-surefire-plugin-version>
     <maven-jar-plugin-version>3.3.0</maven-jar-plugin-version>
-    <maven-shade-plugin-version>3.5.1</maven-shade-plugin-version>
     <maven-install-plugin-version>3.1.1</maven-install-plugin-version>
-    <maven-release-plugin-version>3.0.1</maven-release-plugin-version>
-    <maven-deploy-plugin-version>3.1.1</maven-deploy-plugin-version>
-    <maven-scm-plugin-version>2.0.1</maven-scm-plugin-version>
-    <maven-source-plugin-version>3.3.0</maven-source-plugin-version>
-    <maven-javadoc-plugin-version>3.6.0</maven-javadoc-plugin-version>
-    <maven-gpg-plugin-version>3.1.0</maven-gpg-plugin-version>
+
+    <tycho-group-id>org.eclipse.tycho</tycho-group-id>
+    <tycho-version>4.0.4</tycho-version>
+    <!--tycho-version>3.0.5</tycho-version-->
+    
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <build>
@@ -65,11 +46,6 @@
         </plugin>
         <plugin>
           <groupId>${maven-group-id}</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>${maven-surefire-plugin-version}</version>
-        </plugin>
-        <plugin>
-          <groupId>${maven-group-id}</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>${maven-jar-plugin-version}</version>
         </plugin>
@@ -78,40 +54,40 @@
           <artifactId>maven-install-plugin</artifactId>
           <version>${maven-install-plugin-version}</version>
         </plugin>
+
         <plugin>
-          <groupId>${maven-group-id}</groupId>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>${maven-release-plugin-version}</version>
-          <configuration>
-            <autoVersionSubmodules>true</autoVersionSubmodules>
-            <goals>deploy</goals>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>${maven-group-id}</groupId>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>${maven-deploy-plugin-version}</version>
+          <groupId>${tycho-group-id}</groupId>
+          <artifactId>tycho-maven-plugin</artifactId>
+          <version>${tycho-version}</version>
+          <extensions>true</extensions>
         </plugin>
 
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>4.0.0-M11</version>
-          <dependencies>
-            <dependency><!-- add support for ssh/scp -->
-              <groupId>org.apache.maven.wagon</groupId>
-              <artifactId>wagon-file</artifactId>
-              <version>1.0</version>
-            </dependency>
-          </dependencies>
+          <groupId>${tycho-group-id}</groupId>
+          <artifactId>tycho-compiler-plugin</artifactId>
+          <version>${tycho-version}</version>
+          <configuration>
+            <useProjectSettings>false</useProjectSettings>
+          </configuration>
         </plugin>
 
      </plugins>
+    
     </pluginManagement>
+
+    <plugins>
+
+      <plugin>
+        <groupId>${tycho-group-id}</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+      </plugin>
+
+    </plugins>
+
   </build>
   
   <modules>
-    <module>submodule</module>
+    <module>testdeploy</module>
   </modules>
 
 </project>

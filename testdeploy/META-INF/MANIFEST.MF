@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Testdeploy
+Bundle-SymbolicName: testdeploy
+Bundle-Version: 1.0.0.qualifier
+Export-Package: testdeploy
+Automatic-Module-Name: testdeploy
+Bundle-RequiredExecutionEnvironment: JavaSE-17
