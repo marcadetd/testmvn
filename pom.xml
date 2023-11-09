@@ -5,14 +5,14 @@
 
   <groupId>io.github.marcadetd</groupId>
   <artifactId>main</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <scm>
     <connection>scm:git:git@github.com:marcadetd/testmvn.git</connection>
     <developerConnection>scm:git:git@github.com:marcadetd/testmvn.git</developerConnection>
     <url>https://github.com/marcadetd/testmvn</url>
-    <tag>main-1.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
