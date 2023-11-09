@@ -18,11 +18,11 @@
   <distributionManagement>
     <repository>
       <id>me</id>
-      <url>/Users/marcadet/repo</url>
+      <url>file:/Users/marcadet/repo</url>
     </repository>
     <snapshotRepository>
       <id>me</id>
-      <url>/Users/marcadet/repo</url>
+      <url>file:/Users/marcadet/repo</url>
     </snapshotRepository>
   </distributionManagement>
 
