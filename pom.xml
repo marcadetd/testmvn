@@ -18,11 +18,11 @@
   <distributionManagement>
     <repository>
       <id>me</id>
-      <url>scp://localhost/repo</url>
+      <url>scp://pc28-148.lisn.upsaclay.fr/repo</url>
     </repository>
     <snapshotRepository>
       <id>me</id>
-      <url>scp://localhost/repo</url>
+      <url>scp://pc28-148.lisn.upsaclay.fr/repo</url>
     </snapshotRepository>
   </distributionManagement>
 
