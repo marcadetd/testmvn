@@ -18,11 +18,11 @@
   <distributionManagement>
     <repository>
       <id>me</id>
-      <url>sftp://pc28-148.lisn.upsaclay.fr/repo</url>
+      <url>/Users/marcadet/repo</url>
     </repository>
     <snapshotRepository>
       <id>me</id>
-      <url>sftp://pc28-148.lisn.upsaclay.fr/repo</url>
+      <url>/Users/marcadet/repo</url>
     </snapshotRepository>
   </distributionManagement>
 
@@ -91,6 +91,19 @@
           <groupId>${maven-group-id}</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>${maven-deploy-plugin-version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>4.0.0-M11</version>
+          <dependencies>
+            <dependency><!-- add support for ssh/scp -->
+              <groupId>org.apache.maven.wagon</groupId>
+              <artifactId>wagon-file</artifactId>
+              <version>1.0</version>
+            </dependency>
+          </dependencies>
         </plugin>
 
      </plugins>
