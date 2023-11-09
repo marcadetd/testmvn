@@ -6,13 +6,13 @@
  
   <groupId>io.github.marcadetd</groupId>
   <artifactId>submodule</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
   
   <parent>
     <groupId>io.github.marcadetd</groupId>
     <artifactId>main</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
 
 </project>
